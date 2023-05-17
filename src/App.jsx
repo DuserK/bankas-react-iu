@@ -38,6 +38,9 @@ export default function App() {
               Pašalinti
             </div>
           </div>
+          <button className='btn'>
+              Pridėti sąskaitą
+          </button>
         </div>
       </header>
     </div>
