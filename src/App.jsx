@@ -1,7 +1,17 @@
-import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
+import Create from './components/create';
+import { useEffect, useState } from 'react';
+
+const KEY = 'bankAccounts';
 
 export default function App() {
+
+  const [accounts, setAccounts] = useState(null);
+
+  useEffect(_ => {
+    setAccounts(crudRead(KEY));
+  },[]);
 
   return (
     <div classNameName="App">
@@ -38,9 +48,12 @@ export default function App() {
               Pašalinti
             </div>
           </div>
-          <button className='btn'>
+          <div>
+            <Create />
+          </div>
+          {/* <button className='btn'>
               Pridėti sąskaitą
-          </button>
+          </button> */}
         </div>
       </header>
     </div>
