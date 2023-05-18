@@ -6,13 +6,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.App-header {
-
-}
-
-.btn {
-
-}
 
 .top-row {
     // display: flex;
@@ -23,8 +16,7 @@
     color: #fff;
     border-radius:10px;
     padding: 15px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;    .row {
-    }
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;    
 }
 .content {
     position: relative;
@@ -39,6 +31,7 @@
         margin: 0 8px;
         background-color: $gray;
         line-height: 2em;
+        padding: 0.4em 0;
         border-radius: 10px;
 
     }
@@ -61,4 +54,16 @@
     bottom: 20px;
     right: 20px;
     color: #000; 
+}
+
+.list-group {
+    margin: 10px 8px;
+    border-radius: 10px;
+    .list-group-item {
+        display: flex;
+        margin: 0;
+        padding: 8px 0;
+
+    }
+
 }

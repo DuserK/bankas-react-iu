@@ -3,6 +3,7 @@ import './App.scss';
 import Create from './components/create';
 import { useEffect, useState } from 'react';
 import { crudRead } from './Functions/localStorageCrud';
+import List from './components/list';
 
 const KEY = 'bankAccounts';
 
@@ -15,8 +16,8 @@ export default function App() {
   },[]);
 
   return (
-    <div classNameName="App">
-      <header classNameName="App-header">
+    <div className="App">
+      <header className="App-header">
         <div className="container top-row">
           <div className="row">
             <div className="col-2">
@@ -28,27 +29,9 @@ export default function App() {
           </div>
           </div>
         <div className="container content">
-          <div className="row info">
-            <div className="col-4">
-              Pavardė, vardas
-            </div>
-            
-            <div className="col-3">
-              Sąskaitos numeris
-            </div>
+         
+          <List accounts={accounts}/>
 
-            <div className="col-2">
-              Balansas
-            </div>
-
-            <div className="col-2">
-              Pridėti / išimti
-            </div>
-
-            <div className="col-1">
-              Pašalinti
-            </div>
-          </div>
           <div>
             <Create />
           </div>
