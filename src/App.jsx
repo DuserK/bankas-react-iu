@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import Create from './components/create';
 import { useEffect, useState } from 'react';
+import { crudRead } from './Functions/localStorageCrud';
 
 const KEY = 'bankAccounts';
 
@@ -10,7 +11,7 @@ export default function App() {
   const [accounts, setAccounts] = useState(null);
 
   useEffect(_ => {
-    setAccounts(crudRead(KEY));
+    setAccounts(crudRead(KEY))
   },[]);
 
   return (
