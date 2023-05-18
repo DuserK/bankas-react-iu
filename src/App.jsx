@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import { crudCreate, crudRead } from './Functions/localStorageCrud';
 import List from './components/list';
 import Navigation from './components/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons'
 
 
 const KEY = 'bankAccounts';
@@ -33,8 +35,8 @@ export default function App() {
       <header className="App-header">
         <div className="container top-row">
           <div className="row">
-            <div className="col-2">
-                Logo
+            <div className="col-2" style={{textAlign:'center'}}>
+            <FontAwesomeIcon icon={faBuildingColumns} />
             </div>
             <div className="col-10">
                 ReacT bankas
