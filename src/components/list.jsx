@@ -1,39 +1,26 @@
-export default function List() {
+
+export default function List({ accounts }) {
 
     return (
         <>
-            <div className="row info">
-                <div className="col-4">Pavardė, vardas</div>
-                
-                <div className="col-3">Sąskaitos numeris</div>
-
-                <div className="col-2">Balansas</div>
-
-                <div className="col-2">Pridėti / išimti</div>
-
-                <div className="col-1">Pašalinti</div>
-            </div>
-
-            <ul className="list-group container">
+            <ul className="list-group row">
                 {
-                    accounts.map(a => (
+                    accounts ?  accounts.map(a => (
 
-                        <li className="list-group-item row">
+                        <li key={a.id} className="list-group-item row col-12">
 
-                            <div className="col-4">Pavardė, vardas</div>
+                            <div className="col-4">{a.Surname}, {a.Name}</div>
                             
-                            <div className="col-3">Sąskaitos numeris</div>
+                            <div className="col-3">{a.AccountNum}</div>
         
-                            <div className="col-2">Balansas</div>
+                            <div className="col-2">{a.Balance} €</div>
         
-                            <div className="col-2">Pridėti / išimti</div>
+                            <div className="col-2">+ / -</div>
         
-                            <div className="col-1">Pašalinti</div>
+                            <div className="col-1">delete</div>
                         </li>
-                    ))
+                    )) : ''
                 }
-
-
             </ul>
         </>
     )

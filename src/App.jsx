@@ -2,18 +2,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import Create from './components/create';
 import { useEffect, useState } from 'react';
-import { crudRead } from './Functions/localStorageCrud';
+import { crudCreate, crudRead } from './Functions/localStorageCrud';
 import List from './components/list';
+import Navigation from './components/navigation';
+
 
 const KEY = 'bankAccounts';
 
 export default function App() {
 
+  const [listUpdate, setListUpdate] = useState(Date.now());
+
   const [accounts, setAccounts] = useState(null);
 
+  const [createData, setCreateData] =useState(null);
+
   useEffect(_ => {
-    setAccounts(crudRead(KEY))
-  },[]);
+    setAccounts(crudRead(KEY)); 
+  },[listUpdate]);
+
+  useEffect(_=> {
+    if (null === createData) {
+      return
+    } crudCreate(KEY, createData)
+    setListUpdate(Date.now())
+  },[createData])
 
   return (
     <div className="App">
@@ -29,11 +42,13 @@ export default function App() {
           </div>
           </div>
         <div className="container content">
-         
+          
+          <Navigation/>
+
           <List accounts={accounts}/>
 
           <div>
-            <Create />
+            <Create setCreateData={setCreateData}/>
           </div>
           {/* <button className='btn'>
               Pridėti sąskaitą
