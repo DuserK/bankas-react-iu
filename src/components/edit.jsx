@@ -1,22 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import CurrencyInput from "react-currency-input-field";
 
-export default function Edit({}) {
-    
-    const sumRef
-    const edit = (f, s) {
-        if
+export default function Edit({ setEditData }) {
 
-    } 
-//   const edit = (_) => {
-//     setDeleteData(deleteModalData);
-//     setDeleteModalData(null);
-//   };
+console.log(setEditData);
+
+const addMoney = _ => {
+    return
+}
 
   return (
     <>
-      <input type="number" placeholder="įveskite sumą" min="0"/ ref={sumRef}>
-      <div className="plus" onClick={edit("+")}>
+      <CurrencyInput
+          id="input-example"
+          name="input-name"
+          placeholder="įrašykite sumą"
+          allowNegativeValue={false}
+          decimalsLimit={2}
+          suffix=" €"
+          groupSeparator= ' '
+        />
+      <div className="plus" onClick={addMoney}>
         <FontAwesomeIcon icon={faPlus} />
       </div>
       <div className="minus">

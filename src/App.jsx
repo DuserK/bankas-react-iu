@@ -24,6 +24,7 @@ export default function App() {
 
   const [deleteData, setDeleteData] = useState(null);
 
+  const [editData, setEditData] = useState(null);
 
   //Read
   useEffect(_ => {
