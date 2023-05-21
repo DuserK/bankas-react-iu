@@ -17,13 +17,23 @@ const addMoney = a => {
     setEditData ({...a, Balance: sum, id:a.id});
     setMoneyChange(0);
 }
+
+const takeMoney = a => {
+    const sum = a.Balance - parseFloat(moneyChange);
+    if (sum >= 0){
+        setEditData ({...a, Balance: sum, id:a.id});
+        setMoneyChange(0);
+    } 
+
+
+}
 const displayValue = moneyChange === 0 ? '' : moneyChange;
 
 if (a.Balance === null){
     return null;
 }
 
-  return (
+return (
     <>
       <CurrencyInput
           id="input-example"
@@ -39,7 +49,7 @@ if (a.Balance === null){
       <div className="plus" onClick={_=>addMoney(a)}>
         <FontAwesomeIcon icon={faPlus} />
       </div>
-      <div className="minus">
+      <div className="minus" onClick={_=>takeMoney(a)}>
         <FontAwesomeIcon icon={faMinus} />
       </div>
     </>
