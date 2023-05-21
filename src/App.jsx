@@ -24,6 +24,7 @@ export default function App() {
 
   const [deleteData, setDeleteData] = useState(null);
 
+
   //Read
   useEffect(_ => {
     setAccounts(crudRead(KEY)); 
