@@ -6,25 +6,20 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.App-header {
-
-}
-
-.btn {
-
-}
 
 .top-row {
+    // display: flex;
+    // align-items: center;
+    margin: 15px auto;
     background-color: $green;
     font-size: 40px;
     color: #fff;
     border-radius:10px;
     padding: 15px;
-    margin: 15px 0;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;    .row {
-        display: flex;
-        align-items: center;
-    }
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;    
+}
+.logo {
+    color: #fff;
 }
 .content {
     position: relative;
@@ -39,10 +34,11 @@
         margin: 0 8px;
         background-color: $gray;
         line-height: 2em;
+        padding: 0.4em 0;
         border-radius: 10px;
 
     }
-    button {
+    .create-button {
         position: absolute;
         bottom: 20px;
         right: 20px;
@@ -53,5 +49,60 @@
         color: #fff;
         font-size: 15px;
        
+    }
+}
+
+.card {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #000; 
+}
+
+.list-group {
+    margin: 10px 8px;
+    border-radius: 10px;
+    .list-group-item {
+        display: flex;
+        margin: 0;
+        padding: 8px 0;
+        .change {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0 15px;
+        }
+        input{
+        width: 100%;
+        display: inline-block;
+        }
+    }
+
+}
+.minus {
+    display: inline-block;
+    color: red;
+}
+.plus {
+    display: inline-block;
+    color: green;
+}
+.delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $gray;
+}
+input {
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+}
+.modal {
+    display: block;
+    background-color: #00000076;
+    .modal-header {
+        background-color: $green;
+        color: white;
     }
 }
