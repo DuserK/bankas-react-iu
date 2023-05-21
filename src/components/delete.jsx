@@ -9,6 +9,9 @@ export default function Delete ({deleteModalData, setDeleteModalData, setDeleteD
 
         return null
     }
+    if (deleteModalData.Balance !== 0) {
+        return
+    } else {
 
     return (
         <div className="modal">
@@ -30,4 +33,5 @@ export default function Delete ({deleteModalData, setDeleteModalData, setDeleteD
         </div>
 
     )
+}
 }
