@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Edit from "./edit";
 
-export default function List({ accounts, setDeleteModalData }) {
+export default function List({ accounts, setEditData, setDeleteModalData }) {
     const destroy = (a) => {
         setDeleteModalData(a);
     };
@@ -23,7 +23,10 @@ export default function List({ accounts, setDeleteModalData }) {
                                 <div className="col-2">{a.Balance} €</div>
 
                                 <div className="col-3 change">
-                                   <Edit />
+                                   <Edit 
+                                   a={a}
+                                   setEditData={setEditData}
+                                   />
                                 </div>
 
                                 <div className="col-1 delete" onClick={(_) => destroy(a)}>

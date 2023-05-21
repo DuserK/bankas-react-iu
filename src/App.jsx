@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import Create from './components/create';
 import { useEffect, useState } from 'react';
-import { crudCreate, crudDelete, crudRead } from './Functions/localStorageCrud';
+import { crudCreate, crudDelete, crudEdit, crudRead } from './Functions/localStorageCrud';
 import List from './components/list';
 import Navigation from './components/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,6 +39,14 @@ export default function App() {
     setListUpdate(Date.now())
   },[createData]);
 
+    //Edit
+    useEffect(_ => {
+      if (null === editData) {
+        return
+      } crudEdit(KEY, editData, editData.id)
+      setListUpdate(Date.now())
+    },[editData]);
+
   //Delete
   useEffect(_ => {
     if (null === deleteData) {
@@ -64,6 +72,7 @@ export default function App() {
           
             <Navigation/>
             <List accounts={accounts}
+            setEditData={setEditData}
             setDeleteModalData={setDeleteModalData}/>
             <div>
               <Create setCreateData={setCreateData}/>
