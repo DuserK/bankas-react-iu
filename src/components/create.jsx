@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import rand from "../Functions/rand";
 
 export default function Create ( {setCreateData}) {
@@ -11,11 +11,13 @@ export default function Create ( {setCreateData}) {
 
         const name = nameRef.current.value;
         const surname = surnameRef.current.value;
+        const accountnumber =  `LT00 3500 0${rand(100,999)} ${rand(1000,9999)}`;
+        
         setCreateData({
             Name: name,
             Surname: surname,
             Balance: 0,
-            AccountNum: 'LT00 ' + '3500 0' + rand(100,999) +' '+ rand(1000,9999),
+            AccountNum: accountnumber,
         });
 
         nameRef.current.value = '';

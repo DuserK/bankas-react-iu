@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus, faTrash,} from '@fortawesome/free-solid-svg-icons'
 
-export default function List({ accounts }) {
+export default function List({ accounts, setDeleteModalData }) {
+
+    const destroy = a => {
+        setDeleteModalData(a);
+    }
 
     return (
         <>
@@ -23,7 +27,7 @@ export default function List({ accounts }) {
                                 <div className='minus'><FontAwesomeIcon icon={faMinus} /></div>    
                             </div>
         
-                            <div className="col-1 delete"><FontAwesomeIcon icon={faTrash}/></div>
+                            <div className="col-1 delete" onClick={_=>destroy(a)}><FontAwesomeIcon icon={faTrash}/></div>
                         </li>
                     )) : ''
                 }

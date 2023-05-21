@@ -98,3 +98,11 @@ input {
     border: 1px solid $light-gray;
     border-radius: 5px;
 }
+.modal {
+    display: block;
+    background-color: #00000076;
+    .modal-header {
+        background-color: $green;
+        color: white;
+    }
+}
